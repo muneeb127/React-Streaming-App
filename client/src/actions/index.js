@@ -8,6 +8,7 @@ import {
   DELETE_STREAM,
   EDIT_STREAM
 } from "./types";
+import history from "../history";
 
 export const signIn = userId => {
   return {
@@ -36,6 +37,10 @@ export const createStream = formValues => async (dispatch, getState) => {
   //Fetching userId from the state
   const { userId } = getState().auth;
   const response = await streams.post("/streams", { ...formValues, userId });
+
+  //Do some programmit navigation
+  //get the user back to the root route once the stream is created
+  history.push("/");
 
   dispatch({
     type: CREATE_STREAM,
