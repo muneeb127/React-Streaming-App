@@ -1,0 +1,14 @@
+{
+  "streams": [
+    {
+      "title": "My Stream",
+      "description": "First Stream of the site",
+      "id": 1
+    },
+    {
+      "title": "Dota 2 - Invoker Gameplay",
+      "description": "Invoker new spells meta 8.1",
+      "id": 2
+    }
+  ]
+}
