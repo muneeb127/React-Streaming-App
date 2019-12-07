@@ -30,8 +30,12 @@ export const signOut = () => {
 
 //OR
 
-export const createStream = formValues => async dispatch => {
-  const response = await streams.post("/streams", formValues);
+//Redux thunk automatically calls thunk
+//getState function allows us to reach into the redux store and pull out some information
+export const createStream = formValues => async (dispatch, getState) => {
+  //Fetching userId from the state
+  const { userId } = getState().auth;
+  const response = await streams.post("/streams", { ...formValues, userId });
 
   dispatch({
     type: CREATE_STREAM,

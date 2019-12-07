@@ -9,6 +9,12 @@
       "title": "Dota 2 - Invoker Gameplay",
       "description": "Invoker new spells meta 8.1",
       "id": 2
+    },
+    {
+      "title": "Creating stream using userID",
+      "description": "My first userID stream",
+      "userId": "103007354791822668372",
+      "id": 3
     }
   ]
 }

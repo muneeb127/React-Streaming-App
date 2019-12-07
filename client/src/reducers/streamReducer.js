@@ -18,6 +18,7 @@ export default (state = {}, action) => {
     case FETCH_STREAMS:
       //Using function mapKeys from lodash
       //mapKeys takes an array and returns an object
+      //Each oject will be given an id according to its id in the object
       return { ...state, ..._.mapKeys(action.payload, "id") };
 
     case CREATE_STREAM:
