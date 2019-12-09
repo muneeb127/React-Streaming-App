@@ -66,11 +66,13 @@ export const fetchStream = id => async dispatch => {
 };
 
 export const editStream = (id, formValues) => async dispatch => {
-  const response = await streams.put(`streams/${id}`, formValues);
+  // patch only updates the passed in values but it doesnot over write or delete any other value
+  const response = await streams.patch(`streams/${id}`, formValues);
   dispatch({
     type: EDIT_STREAM,
     payload: response.data
   });
+  history.push("/");
 };
 
 export const deleteStream = id => async dispatch => {
